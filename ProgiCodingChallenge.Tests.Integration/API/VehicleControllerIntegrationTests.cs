@@ -33,7 +33,7 @@ public class VehicleControllerIntegrationTests : ProgiCodingChallengeApiWebAppli
         );
 
         // Act
-        var response = await _client.PostAsync("/api/vehicle/CalculatePrice", content);
+        var response = await _client.PostAsync("/api/1.0/vehicle/CalculatePrice", content);
 
         // Assert
         response.IsSuccessStatusCode.Should().BeTrue();
@@ -65,7 +65,7 @@ public class VehicleControllerIntegrationTests : ProgiCodingChallengeApiWebAppli
         );
 
         // Act
-        var response = await _client.PostAsync("/api/vehicle/CalculatePrice", content);
+        var response = await _client.PostAsync("/api/1.0/vehicle/CalculatePrice", content);
 
         // Assert
         response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
