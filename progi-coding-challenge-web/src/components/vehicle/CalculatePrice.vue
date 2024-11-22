@@ -70,7 +70,7 @@
         try {
           //The URL must be by environment DEV, STAGING AND PROD.
           //This request could have a typescript file for it.
-          const response = await axios.post('http://localhost:5177/api/Vehicle/CalculatePrice', {
+          const response = await axios.post('http://localhost:5177/api/1.0/Vehicle/CalculatePrice', {
             vehicleType: this.vehicleType,
             vehiclePrice: this.vehiclePrice
           });

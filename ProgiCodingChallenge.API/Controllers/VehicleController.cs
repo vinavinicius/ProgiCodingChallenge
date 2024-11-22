@@ -4,12 +4,15 @@ using ProgiCodingChallenge.API.Handlers.Vehicle.CalculatePrice;
 namespace ProgiCodingChallenge.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/{v:apiVersion}/[controller]")]
 public class VehicleController(
         IVehicleCalculatePriceCommandHandler vehicleCalculatePriceCommandHandler
     ) : Controller
 {
     [HttpPost("CalculatePrice")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public IActionResult CalculatePrice([FromBody] VehicleCalculatePriceCommand calculatePriceCommand)
     {
         var result = vehicleCalculatePriceCommandHandler.Handle(calculatePriceCommand);

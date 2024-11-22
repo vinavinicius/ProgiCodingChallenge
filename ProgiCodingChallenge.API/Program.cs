@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IVehicleFactory, VehicleFactory>();
 builder.Services.AddScoped<IVehicleCalculatePriceCommandHandler, VehicleCalculatePriceCommandHandler>();
 builder.Services.AddControllers();
+builder.Services.AddApiVersioning();
 builder.Services.AddValidatorsFromAssemblyContaining<VehicleCalculatePriceCommandValidator>();
 
 builder.Services.AddCors(options =>
