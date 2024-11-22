@@ -36,9 +36,9 @@
           <tr>
             <td>{{ calculatedPrice.price }}</td>
             <td>{{ calculatedPrice.type }}</td>
-            <th v-for="fee in calculatedPrice.fees">
+            <td v-for="fee in calculatedPrice.fees">
               {{fee.value}}
-            </th>
+            </td>
             <td>{{ calculatedPrice.totalPrice }}</td>
           </tr>
         </tbody>
