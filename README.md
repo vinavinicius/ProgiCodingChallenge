@@ -25,3 +25,9 @@ Below is an example of how the configuration should look:
 Now, you can run the application by pressing **F5** or clicking **Start** in Visual Studio.
 
 ---
+
+### Additional Notes
+- Make sure to install **Axios** globally if needed by running:
+
+```bash
+npm install -g axios
