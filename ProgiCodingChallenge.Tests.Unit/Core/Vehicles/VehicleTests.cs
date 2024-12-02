@@ -84,7 +84,7 @@ public class TestVehicle : Vehicle
 {
     public override VehicleType VehicleType => VehicleType.Common;
 
-    protected override IList<IVehicleFee> GetFees()
+    protected override IList<IVehicleFee> CreateFees()
     {
         return
         [

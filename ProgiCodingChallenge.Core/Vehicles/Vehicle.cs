@@ -23,11 +23,18 @@ public abstract class Vehicle
         }
 
         Price = price;
-        Fees = GetFees();
-    } 
+        Fees = CreateFees();
+    }
 
     public abstract VehicleType VehicleType { get; }
 
-    protected abstract IList<IVehicleFee> GetFees();
-
+    protected virtual IList<IVehicleFee> CreateFees()
+    {
+        return [
+            new BasicVehicleFee(VehicleType, Price),
+            new EspecialVehicleFee(VehicleType, Price),
+            new AssociationVehicleFee(Price),
+            new StorageVehicleFee()
+        ];
+    }
 }
